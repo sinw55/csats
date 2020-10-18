@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Rxjs</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    header {
+      height: 100px;
+      background-color:red;
+    }
+
+    footer {
+      height: 100px;
+      background-color: pink;       
+    }
+
+    .page-container {
+      display: flex;
+      flex-direction: row;
+      height: 90%;
+    }
+
+    .page-container .navigation {
+      flex: 0 0 22%;
+      height: 100%;
+      background-color: lightgray;
+    }
+
+    .page-container .main {
+      display: flex;
+      flex: 0 0 78%;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+    }
+
+    .content-container .content {
+      flex: 0 0 70%;
+      background-color: white;
+    }
+
+    .content-container .side-bar {
+      flex: 0 0 30%;
+      background-color: yellow;
+    }
+
+    @media (max-width: 800px) {
+      .page-container {
+        flex-direction: column;
+      }
+
+      .content-container {
+        flex-direction: column-reverse;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>This is a Heading</h1>
+  </header>
+
+  <div class="page-container">
+    <div class="navigation">
+      <nav>
+        <h1>Navigation</h1>
+      </nav>
+    </div>
+
+    <div class="main">
+      <div class="content-container">
+        <div class="content">
+          <h1>Main content</h1>
+          <app-root></app-root>
+        </div>
+        <div class="side-bar">
+          <aside>
+            <h1>Side bar</h1>
+          </aside>
+        </div>
+      </div>
+
+      <footer>
+        <h1>Footer</h1>
+      </footer>
+    </div>
+
+  </div>
+
+  
+</body>
+
+</html>

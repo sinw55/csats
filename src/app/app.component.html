@@ -1,0 +1,38 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<input type="text" style="margin-bottom: 10px;" value="leepadg" #inputString/> Input string <br>
+<button id="buttona" (click)="inputString.value && setHashToString(inputString.value)" style="margin-bottom: 10px;">Get hash</button><br>
+{{hashValue}}
+
+<br><br><br><br><br><br>
+
+<span id="test"></span>
+<input type="text" style="margin-bottom: 10px;" #hash1/> Hash to start <br>
+<input type="text" style="margin-bottom: 10px;" #strLength1/> String length <br>
+<button id="buttona" (click)="hash1.value && strLength1.value && handleStringValueFromHash(hash1.value, strLength1.value, 1)" style="margin-bottom: 10px;">Get String</button><br>
+{{output1|json}}
+
+<br><br><br><br><br><br>
+
+<span id="test"></span>
+<input type="text" style="margin-bottom: 10px;" value="1317985395604951854" #hash2/> Hash to start <br>
+<input type="text" style="margin-bottom: 10px;" value="11" #strLength2/> String length <br>
+<button id="buttona" (click)="hash2.value && strLength2.value && handleStringValueFromHash(hash2.value, strLength2.value, 2)" style="margin-bottom: 10px;">Get String</button><br>
+{{output2|json}}
+
+<br><br><br><br><br><br>
+
+<span id="test"></span>
+<input type="text" style="margin-bottom: 10px;" value="945924806726376" #hash3/> Hash to start <br>
+<input type="text" style="margin-bottom: 10px;" value="9" #strLength3/> String length <br>
+<button id="buttona" (click)="hash3.value && strLength3.value && handleStringValueFromHash(hash3.value, strLength3.value, 3)" style="margin-bottom: 10px;">Get String</button><br>
+{{output3|json}}
+
+<router-outlet></router-outlet>

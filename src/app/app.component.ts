@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +11,25 @@ export class AppComponent implements OnInit {
   output1: any[];
   output2: any[];
   output3: any[];
+  error: any;
+  @ViewChild('hash1') hash1: ElementRef;
+  @ViewChild('hash2') hash2: ElementRef;
+  @ViewChild('hash3') hash3: ElementRef;
 
   constructor() {
   }
 
   handleStringValueFromHash(hash: bigint, length: number, id) {
     let output = [];
-    this.hashToString(hash, "acdegilmnoprstuw", "", length, output);
+    this.error = {1: '', 2: '', 3: ''};
+    
+    try {
+      this.hashToString(hash, "acdegilmnoprstuw", "", length, output);
+    } catch(e) {
+      this.error[id] = "Not safe interger";
+    }
+    
+
     switch(id) {
       case 1:
         this.output1 = output;
@@ -40,7 +52,7 @@ export class AppComponent implements OnInit {
   hashToString(hash: bigint, letters: string, added: string, length: number, output) {
     const hashNumber = Number(hash)
     if (!Number.isSafeInteger(hashNumber) || hash < 7) {
-      return
+      throw new Error('Not safe integer');
     }
 
     if (length == 0 && hashNumber == 7) {
